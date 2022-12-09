@@ -1,9 +1,5 @@
 ﻿using GoooodProject;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Collections.Generic;
-using System.Reflection.Emit;
-
 public partial class ApplicationContext : DbContext
 {
     public ApplicationContext()
@@ -16,7 +12,7 @@ public partial class ApplicationContext : DbContext
         Database.EnsureCreated();
     }
 
-    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<Employee> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

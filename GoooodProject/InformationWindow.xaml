@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoooodProject"
         mc:Ignorable="d"
-        Title="InformationWindow" Height="450" Width="300">
+        Title="Подробная информация" Height="450" Width="270" Background="#D7D7D7">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />
@@ -31,27 +31,28 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="199" />
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="ID работника" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Text="Фамилия" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Text="Имя" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <TextBlock Text="Отчество" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Дата рождения" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Text="Телефон" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Text="Отдел" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Text="ID работника" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" />
+        <TextBlock Text="Фамилия" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" />
+        <TextBlock Text="Имя" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Times New Roman" />
+        <TextBlock Text="Отчество" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman"/>
+        <TextBlock Text="Дата рождения" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" />
+        <TextBlock Text="Телефон" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" />
+        <TextBlock Text="Отдел" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" />
 
-        <TextBlock Text="{Binding Idper}" Grid.Column="1" VerticalAlignment="Center" />
-        <TextBlock Text="{Binding Surname}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" />
-        <TextBlock Text="{Binding Name}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" />
-        <TextBlock Text="{Binding Patronymic}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" />
-        <TextBlock Text="{Binding DateBirthday}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" />
-        <TextBlock Text="{Binding Phone}" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" />
-        <TextBlock Text="{Binding Department}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" />
+        <TextBlock Text="{Binding Idper}" Grid.Column="1" VerticalAlignment="Center" Margin="8,0,7,0" />
+        <TextBlock Text="{Binding Surname}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="8,0,7,0" />
+        <TextBlock Text="{Binding Name}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="8,0,7,0" />
+        <TextBlock Text="{Binding Patronymic}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Margin="8,0,7,0" />
+        <TextBlock Text="{Binding DateBirthday}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Margin="8,0,7,0" />
+        <TextBlock Text="{Binding Phone}" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Margin="8,0,7,0" />
+        <TextBlock Text="{Binding Department}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Margin="8,0,7,0" />
 
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="7" Grid.Column="1">
-            <Button IsDefault="True" Click="Accept_Click" >OK</Button>
+            <Button IsDefault="True" Click="Accept_Click" FontFamily="Microsoft JhengHei Light" >OK</Button>
         </StackPanel>
     </Grid>
 </Window>

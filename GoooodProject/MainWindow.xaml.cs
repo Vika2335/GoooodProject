@@ -1,28 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using Microsoft.EntityFrameworkCore;
 using GoooodProject;
 
 namespace Goooodproject
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         ApplicationContext db = new ApplicationContext();
@@ -47,10 +29,10 @@ namespace Goooodproject
         // добавление
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow UserWindow = new UserWindow(new User());
+            UserWindow UserWindow = new UserWindow(new Employee());
             if (UserWindow.ShowDialog() == true)
             {
-                User User = UserWindow.User;
+                Employee User = UserWindow.User;
                 db.Users.Add(User);
                 db.SaveChanges();
             }
@@ -59,11 +41,11 @@ namespace Goooodproject
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            User? user = usersList.SelectedItem as User;
+            Employee? user = usersList.SelectedItem as Employee;
             // если ни одного объекта не выделено, выходим
             if (user is null) return;
 
-            UserWindow UserWindow = new UserWindow(new User
+            UserWindow UserWindow = new UserWindow(new Employee
             {
                 Id = user.Id,
                 Name = user.Name,
@@ -98,7 +80,7 @@ namespace Goooodproject
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            User? user = usersList.SelectedItem as User;
+            Employee? user = usersList.SelectedItem as Employee;
             // если ни одного объекта не выделено, выходим
             if (user is null) return;
             db.Users.Remove(user);
@@ -108,7 +90,7 @@ namespace Goooodproject
         private void Info_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            User? user = usersList.SelectedItem as User;
+            Employee? user = usersList.SelectedItem as Employee;
             // если ни одного объекта не выделено, выходим
             if (user is null) return;
 

@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Goooodproject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="450">
+        Title="Список сотрудников" Height="400" Width="450" Background="#D7D7D7">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <ListBox x:Name="usersList" ItemsSource="{Binding}">
+        <ListBox x:Name="usersList" ItemsSource="{Binding}" Background="#F3F3F3">
             <ListBox.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate >
                     <StackPanel>
-                        <TextBlock Text="{Binding Name}" FontSize="13" />
-                        <TextBlock Text="{Binding Surname}" FontSize="13" />
-                        <TextBlock Text="{Binding Patronymic}" FontSize="13" />
+                        <TextBlock>
+                            <Run Text="{Binding Surname}" FontSize="16"/>
+                            <Run Text="{Binding Name}" FontSize="16"/>
+                        </TextBlock>
+                        <TextBlock>
+                            <Run Text="{Binding Department}" FontSize="16"/>
+                        </TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -26,7 +30,8 @@
             <Button Content="Добавить" Margin="10" Click="Add_Click" />
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
             <Button Content="Подробнее" Margin="10" Click="Info_Click" />
-            <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
+            <Button Content="Удалить" Margin="10" Click="Delete_Click" Background="#FFC4C4" BorderBrush="#FF8080" BorderThickness="2" />
+            <Button Content="Сохранить" Margin="10" Background="#B3F0B9" BorderBrush="#7CB682" BorderThickness="2"/>
         </StackPanel>
     </Grid>
 </Window>

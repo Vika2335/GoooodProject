@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoooodProject"
         mc:Ignorable="d"
-        Title="UserWindow" Height="430" Width="400">
+        Title="Добавление сотрудника" Height="450" Width="400" Background="#D7D7D7">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />
