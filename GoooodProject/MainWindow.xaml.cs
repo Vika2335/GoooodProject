@@ -21,19 +21,19 @@ namespace Goooodproject
             // гарантируем, что база данных создана
             db.Database.EnsureCreated();
             // загружаем данные из БД
-            db.Users.Load();
+            db.Employee.Load();
             // и устанавливаем данные в качестве контекста
-            DataContext = db.Users.Local.ToObservableCollection();
+            DataContext = db.Employee.Local.ToObservableCollection();
         }
 
         // добавление
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow UserWindow = new UserWindow(new Employee());
-            if (UserWindow.ShowDialog() == true)
+            EmployeeWindow EmployeeWindow = new EmployeeWindow(new Employee());
+            if (EmployeeWindow.ShowDialog() == true)
             {
-                Employee User = UserWindow.User;
-                db.Users.Add(User);
+                Employee Employee = EmployeeWindow.Employee;
+                db.Employee.Add(Employee);
                 db.SaveChanges();
             }
         }
@@ -41,38 +41,38 @@ namespace Goooodproject
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            Employee? user = usersList.SelectedItem as Employee;
+            Employee? employee = employeesList.SelectedItem as Employee;
             // если ни одного объекта не выделено, выходим
-            if (user is null) return;
+            if (employee is null) return;
 
-            UserWindow UserWindow = new UserWindow(new Employee
+            EmployeeWindow EmployeeWindow = new EmployeeWindow(new Employee
             {
-                Id = user.Id,
-                Name = user.Name,
-                Idper = user.Idper,
-                Surname = user.Surname,
-                Patronymic = user.Patronymic,
-                DateBirthday = user.DateBirthday,
-                Phone = user.Phone,
-                Department = user.Department,
+                Id = employee.Id,
+                Name = employee.Name,
+                Idper = employee.Idper,
+                Surname = employee.Surname,
+                Patronymic = employee.Patronymic,
+                DateBirthday = employee.DateBirthday,
+                Phone = employee.Phone,
+                Department = employee.Department,
             });
 
-            if (UserWindow.ShowDialog() == true)
+            if (EmployeeWindow.ShowDialog() == true)
             {
                 // получаем измененный объект
-                user = db.Users.Find(UserWindow.User.Id);
-                if (user != null)
+                employee = db.Employee.Find(EmployeeWindow.Employee.Id);
+                if (employee != null)
                 {
-                    user.Name = UserWindow.User.Name;
-                    user.Idper = UserWindow.User.Idper;
-                    user.Surname = UserWindow.User.Surname;
-                    user.Patronymic = UserWindow.User.Patronymic;
-                    user.DateBirthday = UserWindow.User.DateBirthday;
-                    user.Phone = UserWindow.User.Phone;
-                    user.Department = UserWindow.User.Department;
+                    employee.Name = EmployeeWindow.Employee.Name;
+                    employee.Idper = EmployeeWindow.Employee.Idper;
+                    employee.Surname = EmployeeWindow.Employee.Surname;
+                    employee.Patronymic = EmployeeWindow.Employee.Patronymic;
+                    employee.DateBirthday = EmployeeWindow.Employee.DateBirthday;
+                    employee.Phone = EmployeeWindow.Employee.Phone;
+                    employee.Department = EmployeeWindow.Employee.Department;
 
                     db.SaveChanges();
-                    usersList.Items.Refresh();
+                    employeesList.Items.Refresh();
                 }
             }
         }
@@ -80,28 +80,28 @@ namespace Goooodproject
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            Employee? user = usersList.SelectedItem as Employee;
+            Employee? employee = employeesList.SelectedItem as Employee;
             // если ни одного объекта не выделено, выходим
-            if (user is null) return;
-            db.Users.Remove(user);
+            if (employee is null) return;
+            db.Employee.Remove(employee);
             db.SaveChanges();
         }
 
         private void Info_Click(object sender, RoutedEventArgs e)
         {
             // получаем выделенный объект
-            Employee? user = usersList.SelectedItem as Employee;
+            Employee? employee = employeesList.SelectedItem as Employee;
             // если ни одного объекта не выделено, выходим
-            if (user is null) return;
+            if (employee is null) return;
 
-            InformationWindow InformationWindow = new InformationWindow(user);
+            InformationWindow InformationWindow = new InformationWindow(employee);
             if (InformationWindow.ShowDialog() == true)
             {
                 // получаем измененный объект
-                user = db.Users.Find(InformationWindow.User.Id);
-                if (user != null)
+                employee = db.Employee.Find(InformationWindow.Employee.Id);
+                if (employee != null)
                 {
-                    usersList.Items.Refresh();
+                    employeesList.Items.Refresh();
                 }
             }
         }

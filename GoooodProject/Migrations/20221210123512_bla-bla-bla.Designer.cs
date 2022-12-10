@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GoooodProject.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20221207153833_Bla-bla-bla")]
-    partial class Blablabla
+    [Migration("20221210123512_bla-bla-bla")]
+    partial class blablabla
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace GoooodProject.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
 
-            modelBuilder.Entity("GoooodProject.User", b =>
+            modelBuilder.Entity("GoooodProject.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace GoooodProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Employee");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,7 +12,7 @@ public partial class ApplicationContext : DbContext
         Database.EnsureCreated();
     }
 
-    public virtual DbSet<Employee> Users { get; set; }
+    public virtual DbSet<Employee> Employee { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

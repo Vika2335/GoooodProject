@@ -4,14 +4,14 @@ namespace GoooodProject
     /// <summary>
     /// Логика взаимодействия для UserWindow.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class EmployeeWindow : Window
     {
-        public Employee User { get; private set; }
-        public UserWindow(Employee user)
+        public Employee Employee { get; private set; }
+        public EmployeeWindow(Employee employee)
         {
             InitializeComponent();
-            User = user;
-            DataContext = User;
+            Employee = employee;
+            DataContext = Employee;
         }
 
         void Accept_Click(object sender, RoutedEventArgs e)

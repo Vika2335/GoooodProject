@@ -3,19 +3,16 @@
 
 namespace GoooodProject
 {
-    /// <summary>
-    /// Логика взаимодействия для InfoWindow.xaml
-    /// </summary>
     public partial class InformationWindow : Window
     {
         ApplicationContext db = new ApplicationContext();
 
-        public Employee User { get; }
-        public InformationWindow(Employee user)
+        public Employee Employee { get; }
+        public InformationWindow(Employee employee)
         {
             InitializeComponent();
-            User = user;
-            DataContext = User;
+            Employee = employee;
+            DataContext = Employee;
         }
 
         private void Accept_Click(object sender, RoutedEventArgs e)

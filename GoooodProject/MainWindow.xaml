@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Goooodproject"
         mc:Ignorable="d"
-        Title="Список сотрудников" Height="400" Width="450" Background="#D7D7D7">
+        Title="Список сотрудников" Height="400" Width="450" Background="#D7D7D7" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <ListBox x:Name="usersList" ItemsSource="{Binding}" Background="#F3F3F3">
+        <ListBox x:Name="employeesList" ItemsSource="{Binding}" Background="#F3F3F3">
             <ListBox.ItemTemplate>
                 <DataTemplate >
                     <StackPanel>

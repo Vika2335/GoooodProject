@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoooodProject"
         mc:Ignorable="d"
-        Title="Подробная информация" Height="450" Width="270" Background="#D7D7D7">
+        Title="Подробная информация" Height="450" Width="270" Background="#D7D7D7" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />

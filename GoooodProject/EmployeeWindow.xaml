@@ -1,11 +1,11 @@
-﻿<Window x:Class="GoooodProject.UserWindow"
+﻿<Window x:Class="GoooodProject.EmployeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoooodProject"
         mc:Ignorable="d"
-        Title="Добавление сотрудника" Height="450" Width="400" Background="#D7D7D7">
+        Title="Добавление сотрудника" Height="450" Width="400" Background="#D7D7D7" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />

@@ -15,7 +15,7 @@ namespace GoooodProject.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
 
-            modelBuilder.Entity("GoooodProject.User", b =>
+            modelBuilder.Entity("GoooodProject.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace GoooodProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Employee");
                 });
 #pragma warning restore 612, 618
         }

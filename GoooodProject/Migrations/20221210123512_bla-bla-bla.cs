@@ -5,13 +5,13 @@
 namespace GoooodProject.Migrations
 {
     /// <inheritdoc />
-    public partial class Blablabla : Migration
+    public partial class blablabla : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "Employee",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -26,7 +26,7 @@ namespace GoooodProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_Employee", x => x.Id);
                 });
         }
 
@@ -34,7 +34,7 @@ namespace GoooodProject.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Employee");
         }
     }
 }
