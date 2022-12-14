@@ -11,9 +11,9 @@
             <RowDefinition />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <ListBox x:Name="employeesList" ItemsSource="{Binding}" Background="#F3F3F3">
+        <ListBox x:Name="employeesList" ItemsSource="{Binding}" Background="#F3F3F3" Margin="0,25,0,0">
             <ListBox.ItemTemplate>
-                <DataTemplate >
+                <DataTemplate>
                     <StackPanel>
                         <TextBlock>
                             <Run Text="{Binding Surname}" FontSize="16"/>
@@ -31,7 +31,12 @@
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
             <Button Content="Подробнее" Margin="10" Click="Info_Click" />
             <Button Content="Удалить" Margin="10" Click="Delete_Click" Background="#FFC4C4" BorderBrush="#FF8080" BorderThickness="2" />
-            <Button Content="Сохранить" Margin="10" Background="#B3F0B9" BorderBrush="#7CB682" BorderThickness="2"/>
         </StackPanel>
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="Сохранить как">
+                <MenuItem Header="Excel" />
+                <MenuItem Header="JSON" Click="MenuItem_JSON_Click" />
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

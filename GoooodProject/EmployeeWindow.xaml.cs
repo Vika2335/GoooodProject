@@ -16,7 +16,10 @@ namespace GoooodProject
 
         void Accept_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            if (!string.IsNullOrEmpty(Employee.Name) || !string.IsNullOrEmpty(Employee.Surname) || !string.IsNullOrEmpty(Employee.Patronymic) || !string.IsNullOrEmpty(Employee.Department) || !string.IsNullOrEmpty(Employee.Phone) || !string.IsNullOrEmpty(Employee.DateBirthday))
+            {
+                DialogResult = true;
+            }
         }
     }
 }

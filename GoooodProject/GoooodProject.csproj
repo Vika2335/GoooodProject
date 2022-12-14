@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="images.png\**" />
+    <EmbeddedResource Remove="images.png\**" />
+    <None Remove="images.png\**" />
+    <Page Remove="images.png\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Excel.cs" />
   </ItemGroup>
 
