@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Excel.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.18.0" />
     <PackageReference Include="EPPlus" Version="6.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />

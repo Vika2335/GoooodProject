@@ -111,5 +111,18 @@ namespace Goooodproject
             JSON data = new JSON(db.Employee);
             MessageBox.Show("Вы сохранили отчет в JSON!");
         }
+
+        private void MenuItem_Excel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Excel data = new Excel(db.Employee);
+                MessageBox.Show("Вы сохранили отчет в Excel!", "Du bist gooood!");
+            }
+            catch
+            {
+                MessageBox.Show("Сохранить не удалось:(", "Error");
+            }
+        }
     }
 }
