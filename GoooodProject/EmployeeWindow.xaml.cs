@@ -1,9 +1,6 @@
 ﻿using System.Windows;
 namespace GoooodProject
 {
-    /// <summary>
-    /// Логика взаимодействия для UserWindow.xaml
-    /// </summary>
     public partial class EmployeeWindow : Window
     {
         public Employee Employee { get; private set; }

@@ -33,7 +33,7 @@
             <Button Content="Удалить" Margin="10" Click="Delete_Click" Background="#FFC4C4" BorderBrush="#FF8080" BorderThickness="2" />
         </StackPanel>
         <Menu Height="25" VerticalAlignment="Top">
-            <MenuItem Header="Сохранить как" BorderBrush="#FF0BF498" Height="25" Background="#FF7BE8B1">
+            <MenuItem Header="Сохранить как" BorderBrush="#7ed998" Height="25" Background="#94ffb2" BorderThickness="2">
                 <MenuItem Header="Excel" Click="MenuItem_Excel_Click" >
                     <MenuItem.Icon>
                         <Image Source="Images/excel.jpg"></Image>

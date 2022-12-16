@@ -15,18 +15,13 @@ namespace Goooodproject
             Loaded += MainWindow_Loaded;
         }
 
-        // при загрузке окна
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            // гарантируем, что база данных создана
             db.Database.EnsureCreated();
-            // загружаем данные из БД
             db.Employee.Load();
-            // и устанавливаем данные в качестве контекста
             DataContext = db.Employee.Local.ToObservableCollection();
         }
 
-        // добавление
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             EmployeeWindow EmployeeWindow = new EmployeeWindow(new Employee());
@@ -37,12 +32,9 @@ namespace Goooodproject
                 db.SaveChanges();
             }
         }
-        // редактирование
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            // получаем выделенный объект
             Employee? employee = employeesList.SelectedItem as Employee;
-            // если ни одного объекта не выделено, выходим
             if (employee is null) return;
 
             EmployeeWindow EmployeeWindow = new EmployeeWindow(new Employee
@@ -59,7 +51,6 @@ namespace Goooodproject
 
             if (EmployeeWindow.ShowDialog() == true)
             {
-                // получаем измененный объект
                 employee = db.Employee.Find(EmployeeWindow.Employee.Id);
                 if (employee != null)
                 {
@@ -76,12 +67,9 @@ namespace Goooodproject
                 }
             }
         }
-        // удаление
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            // получаем выделенный объект
             Employee? employee = employeesList.SelectedItem as Employee;
-            // если ни одного объекта не выделено, выходим
             if (employee is null) return;
             db.Employee.Remove(employee);
             db.SaveChanges();
@@ -89,15 +77,12 @@ namespace Goooodproject
 
         private void Info_Click(object sender, RoutedEventArgs e)
         {
-            // получаем выделенный объект
             Employee? employee = employeesList.SelectedItem as Employee;
-            // если ни одного объекта не выделено, выходим
             if (employee is null) return;
 
             InformationWindow InformationWindow = new InformationWindow(employee);
             if (InformationWindow.ShowDialog() == true)
             {
-                // получаем измененный объект
                 employee = db.Employee.Find(InformationWindow.Employee.Id);
                 if (employee != null)
                 {
@@ -108,8 +93,15 @@ namespace Goooodproject
 
         private void MenuItem_JSON_Click(object sender, RoutedEventArgs e)
         {
-            JSON data = new JSON(db.Employee);
-            MessageBox.Show("Вы сохранили отчет в JSON!", "Du bist gooood!");
+            try
+            {
+                JSON data = new JSON(db.Employee);
+                MessageBox.Show("Вы сохранили отчет в JSON!", "Du bist gooood!");
+            }
+            catch
+            {
+                MessageBox.Show("Сохранить не удалось:(", "Error");
+            }
         }
 
         private void MenuItem_Excel_Click(object sender, RoutedEventArgs e)

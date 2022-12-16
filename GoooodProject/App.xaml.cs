@@ -8,9 +8,7 @@ using System.Windows;
 
 namespace GoooodProject
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+    
     public partial class App : Application
     {
     }

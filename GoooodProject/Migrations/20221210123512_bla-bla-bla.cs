@@ -4,10 +4,8 @@
 
 namespace GoooodProject.Migrations
 {
-    /// <inheritdoc />
     public partial class blablabla : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -30,7 +28,6 @@ namespace GoooodProject.Migrations
                 });
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
