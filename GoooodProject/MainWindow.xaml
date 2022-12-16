@@ -36,12 +36,12 @@
             <MenuItem Header="Сохранить как" BorderBrush="#FF0BF498" Height="25" Background="#FF7BE8B1">
                 <MenuItem Header="Excel" Click="MenuItem_Excel_Click" >
                     <MenuItem.Icon>
-                        <Image Source="excel.jpg"></Image>
+                        <Image Source="Images/excel.jpg"></Image>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="JSON" Click="MenuItem_JSON_Click" >
                     <MenuItem.Icon>
-                        <Image Source="json.jpg"></Image>
+                        <Image Source="Images/json.jpg"></Image>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>

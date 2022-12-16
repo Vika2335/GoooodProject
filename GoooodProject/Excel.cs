@@ -13,7 +13,7 @@ namespace GoooodProject
     {
         public Excel(DbSet<Employee> employees)
         {
-            
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage excelPackage = new ExcelPackage())
             {
                 ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Данные о сотрудниках");
@@ -36,7 +36,7 @@ namespace GoooodProject
                     worksheet.Cells[count, 7].Value = employee.Department;
                     count += 1;
                 }
-                FileInfo fi = new FileInfo(@"Отчет о сотрудниках.xlsx");
+                FileInfo fi = new FileInfo(@"Reports/Отчет о сотрудниках.xlsx");
                 excelPackage.SaveAs(fi);
             }
         }

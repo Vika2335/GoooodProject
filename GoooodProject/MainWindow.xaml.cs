@@ -109,7 +109,7 @@ namespace Goooodproject
         private void MenuItem_JSON_Click(object sender, RoutedEventArgs e)
         {
             JSON data = new JSON(db.Employee);
-            MessageBox.Show("Вы сохранили отчет в JSON!");
+            MessageBox.Show("Вы сохранили отчет в JSON!", "Du bist gooood!");
         }
 
         private void MenuItem_Excel_Click(object sender, RoutedEventArgs e)

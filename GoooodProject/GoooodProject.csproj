@@ -9,9 +9,18 @@
 
   <ItemGroup>
     <Compile Remove="images.png\**" />
+    <Compile Remove="obj\**" />
     <EmbeddedResource Remove="images.png\**" />
+    <EmbeddedResource Remove="obj\**" />
     <None Remove="images.png\**" />
+    <None Remove="obj\**" />
     <Page Remove="images.png\**" />
+    <Page Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\excel.jpg" />
+    <None Remove="Images\json.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +40,20 @@
     <None Update="unicorn.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net7.0-windows\Reports\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net7.0-windows\Reports\employee.json" />
+    <None Include="bin\Debug\net7.0-windows\Reports\Отчет о сотрудниках.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\excel.jpg" />
+    <Resource Include="Images\json.jpg" />
   </ItemGroup>
 
 </Project>

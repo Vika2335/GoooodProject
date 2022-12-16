@@ -21,7 +21,7 @@ namespace GoooodProject
     public JSON(DbSet<Employee> employee)
         {
             string employeeJson = JsonSerializer.Serialize(employee, typeof(DbSet<Employee>), options);
-            StreamWriter file = File.CreateText("employee.json");
+            StreamWriter file = File.CreateText("Reports/employee.json");
             file.WriteLine(employeeJson);
             file.Close();
         }
