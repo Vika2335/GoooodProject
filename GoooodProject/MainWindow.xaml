@@ -45,6 +45,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
+            <TextBox TextWrapping="Wrap" Text="Поиск" Width="340" Height="19" BorderBrush="#FF7D98E8"/>
         </Menu>
     </Grid>
 </Window>

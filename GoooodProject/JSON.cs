@@ -18,12 +18,14 @@ namespace GoooodProject
             Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
             WriteIndented = true
         };
-    public JSON(DbSet<Employee> employee)
+        public JSON(DbSet<Employee> employee)
         {
+            if (!Directory.Exists("Reports"))
+            {
+                Directory.CreateDirectory("Reports");
+            }
             string employeeJson = JsonSerializer.Serialize(employee, typeof(DbSet<Employee>), options);
-            StreamWriter file = File.CreateText("employee.json");
-            file.WriteLine(employeeJson);
-            file.Close();
+            File.WriteAllText("Reports/employee.json", employeeJson);
         }
     }
-}
+ }
