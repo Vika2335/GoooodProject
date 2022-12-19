@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using Microsoft.EntityFrameworkCore;
 using GoooodProject;
+using System.Linq;
 
 namespace Goooodproject
 {
@@ -115,6 +116,19 @@ namespace Goooodproject
             {
                 MessageBox.Show("Сохранить не удалось:(", "Error");
             }
+        }
+
+        private void Poisk_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            var Poisk = db.Employee.ToList();
+            Poisk = Poisk.Where(p => p.Surname.ToLower().Contains(poiskfield.Text.ToLower()) 
+            || p.Name.ToLower().Contains(poiskfield.Text.ToLower()) 
+            || p.Patronymic.ToLower().Contains(poiskfield.Text.ToLower()) 
+            || p.DateBirthday.ToLower().Contains(poiskfield.Text.ToLower())
+            || p.Phone.ToLower().Contains(poiskfield.Text.ToLower())
+            || p.Department.ToLower().Contains(poiskfield.Text.ToLower())
+            || p.Idper.ToString().ToLower().Contains(poiskfield.Text.ToLower())).ToList();
+            DataContext = Poisk;
         }
     }
 }

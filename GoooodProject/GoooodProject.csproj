@@ -8,16 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="bin\Debug\net7.0-windows\Reports\**" />
+    <Compile Remove="bin\**" />
     <Compile Remove="images.png\**" />
     <Compile Remove="obj\**" />
-    <EmbeddedResource Remove="bin\Debug\net7.0-windows\Reports\**" />
+    <EmbeddedResource Remove="bin\**" />
     <EmbeddedResource Remove="images.png\**" />
     <EmbeddedResource Remove="obj\**" />
-    <None Remove="bin\Debug\net7.0-windows\Reports\**" />
+    <None Remove="bin\**" />
     <None Remove="images.png\**" />
     <None Remove="obj\**" />
-    <Page Remove="bin\Debug\net7.0-windows\Reports\**" />
+    <Page Remove="bin\**" />
     <Page Remove="images.png\**" />
     <Page Remove="obj\**" />
   </ItemGroup>
@@ -49,10 +49,6 @@
   <ItemGroup>
     <Resource Include="Images\excel.jpg" />
     <Resource Include="Images\json.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="bin\Debug\net7.0-windows\" />
   </ItemGroup>
 
 </Project>

@@ -45,7 +45,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <TextBox TextWrapping="Wrap" Text="Поиск" Width="340" Height="19" BorderBrush="#FF7D98E8"/>
+            <TextBox x:Name="poiskfield" TextWrapping="Wrap" Width="320" Height="19" BorderBrush="#FF7D98E8" TextChanged="Poisk_TextChanged"/>
         </Menu>
     </Grid>
 </Window>
